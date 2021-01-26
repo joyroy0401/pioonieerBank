@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <div class=" container login-area">
+    <div class=" container login-area" id="lonin-area">
         <h1 class="text-center">Welcome to pionner bank</h1>
         
         <div class="submit-area">
@@ -20,8 +20,15 @@
             <br>
             <input type="password" name="password" placeholder="Enter Your Password" id="" class="form-control">
             <br>
-            <button class="btn btn-primary">Enter</button>
+            <button id="login" class="btn btn-primary">Enter</button>
         </div>
     </div>
+    <script>
+        const loginBtn =document.getElementById("login");
+        loginBtn.addEventListener("click", function(){
+            const loginArea = document.getElementById("lonin-area");
+            loginArea.style.display = "none";
+        })
+    </script>
 </body>
 </html>
