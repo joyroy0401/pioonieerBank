@@ -11,10 +11,10 @@
 <body>
     
     <div class=" container login-area" id="lonin-area">
-        <h1 class="text-center Shajuty">Welcome Shajuty</h1>
+        <h1 class="text-center">Welcome to Pioner Bank</h1>
         
         <div class="submit-area">
-            <h4>Log-in(খালি ঘর পূরণ কর- যে কোন কিছু লিখতে পারো। )</h4>
+            <h4>Log-in</h4>
             <br>
             <input type="email" name="email" placeholder="Please enter your Email" class="form-control">
             <br>
@@ -25,27 +25,49 @@
     </div>
 
     <div id="transaction-area" class="container ">
-        <h1 class="tomer_amer text-center"> তোমারে লেগেছে এত যে ভালো </h1>
-        <h2 class="text-center"> তোমারে লেগেছে এত যে ভালো
-            চাঁদ বুঝি তা জানে,
-            রাতের বাসরে দোসর হয়ে
-            তাই সে আমারে টানে।।
-            রাতের আকাশে তারার মিতালী
-            আমারে দিয়েছে সুরের গীতালী।
-            কত যে আশায় তোমারে আমি
-            জ্বালিয়ে আমি রেখেছি দ্বীপালী।
-            আকুল ভ্রোমরা বলে সে কথা
-            বকুলের কানে কানে।।
-            এত যে কাছে চেয়েছি তোমারে
-            এত যে প্রীতি দিয়েছ আমারে।
-            এত যে পাওয়া কেমনে সহিব
-            একাকী আমি নীরব আঁধারে।
-            আকুল পাপিয়া ছড়ায়ে এ কথা
-            বাতাসের কানে কানে।।</h2>
-            <br>
-            <p class="joy text-center">তোমার ভালোবাসার মানুষ - জয় রায় + সেজুতি রায় </p>
+        <div class="row">
+            <div class="col-md-4 ">
+                <div class="deposit status">
+                    <h5>Deposit</h5>
+                    <h2>$ <span id="currentDeposit">00</span></h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="withdraw status">
+                    <h5>Withdraw</h5>
+                    <h2>$00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="balance status">
+                    <h5>Balance</h5>
+                    <h2>$ <span id="currentBalance">1200</span> </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+               <div class="submit-area">
+                    <h4>Deposit</h4>
+                    <input id="depositAmount" type="text" class="form-control" placeholder="$ amount you want to deposit">
+                    <br>
+                    <button id="addDeposit" class="btn btn-success">Deposit</button>
+               </div>
+            </div>
+            <div class="col-md-6">
+                <div class="submit-area">
+                    <h4>Withdraw</h4>
+                    <input type="text" class="form-control" placeholder="$ amount you want to withdraw">
+                    <br>
+                    <button id="withdraw" class="btn btn-success">Withdraw</button>
+                </div>
+            </div>
+        </div>
+        
     </div>
     <script>
+
+        // login Button event handler
         const loginBtn =document.getElementById("login");
         loginBtn.addEventListener("click", function(){
             const loginArea = document.getElementById("lonin-area");
@@ -53,6 +75,47 @@
             const transactionArea =  document.getElementById("transaction-area");
             transactionArea.style.display = "block";
         })
+
+        // deposit button event handler 
+            const depositBtn = document.getElementById("addDeposit");
+            depositBtn.addEventListener("click", function(){
+
+            const depositAmount = document.getElementById("depositAmount").value;
+            const depositNumber = parseFloat(depositAmount);
+
+            // const currentDeposit = document.getElementById("currentDeposit").innerText;
+            // const currentDepositNumer = parseFloat(currentDeposit);
+            // const totalDeposit = depositNumber + currentDepositNumer;
+        
+
+            // document.getElementById("currentDeposit").innerText = totalDeposit;
+
+            // const currentBalance = document.getElementById("currentBalance").innerText;
+            // const currentBalanceNumber = parseFloat(currentBalance);
+            // const totalBalance = depositNumber + currentBalanceNumber;
+            // document.getElementById("currentBalance").innerText = totalBalance;
+
+
+
+
+updateSpanText("currentDeposit", depositNumber);
+updateSpanText("currentBalance", depositNumber);
+
+            document.getElementById("depositAmount").value="";
+
+          
+        })
+
+        function updateSpanText(id, depositNumber){
+
+            const current = document.getElementById(id).innerText;
+            const currentNumber = parseFloat(current);
+
+            const totalAmount = depositNumber + currentNumber;
+            document.getElementById(id).innerText = totalAmount;
+
+        }
+      
     </script>
 </body>
 </html>
