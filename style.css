@@ -1,7 +1,25 @@
+
+.Shajuty{
+    background-color: red;
+    color: white;
+    font-weight: 900;
+    margin: 10% 0 0 0;
+}
 .submit-area{
    
     margin-top: 50px;
     padding: 40px;
     border-radius: 10px;
     box-shadow:5px 5px 10px gray;
+}
+.tomer_amer{
+    color: red;
+    padding: 10% 0 10% 0;
+}
+
+.joy{
+    background-color: yellow;
+}
+#transaction-area{
+    display: none;
 }

@@ -11,10 +11,10 @@
 <body>
     
     <div class=" container login-area" id="lonin-area">
-        <h1 class="text-center">Welcome to pionner bank</h1>
+        <h1 class="text-center Shajuty">Welcome Shajuty</h1>
         
         <div class="submit-area">
-            <h4>Log-in</h4>
+            <h4>Log-in(খালি ঘর পূরণ কর- যে কোন কিছু লিখতে পারো। )</h4>
             <br>
             <input type="email" name="email" placeholder="Please enter your Email" class="form-control">
             <br>
@@ -23,11 +23,35 @@
             <button id="login" class="btn btn-primary">Enter</button>
         </div>
     </div>
+
+    <div id="transaction-area" class="container ">
+        <h1 class="tomer_amer text-center"> তোমারে লেগেছে এত যে ভালো </h1>
+        <h2 class="text-center"> তোমারে লেগেছে এত যে ভালো
+            চাঁদ বুঝি তা জানে,
+            রাতের বাসরে দোসর হয়ে
+            তাই সে আমারে টানে।।
+            রাতের আকাশে তারার মিতালী
+            আমারে দিয়েছে সুরের গীতালী।
+            কত যে আশায় তোমারে আমি
+            জ্বালিয়ে আমি রেখেছি দ্বীপালী।
+            আকুল ভ্রোমরা বলে সে কথা
+            বকুলের কানে কানে।।
+            এত যে কাছে চেয়েছি তোমারে
+            এত যে প্রীতি দিয়েছ আমারে।
+            এত যে পাওয়া কেমনে সহিব
+            একাকী আমি নীরব আঁধারে।
+            আকুল পাপিয়া ছড়ায়ে এ কথা
+            বাতাসের কানে কানে।।</h2>
+            <br>
+            <p class="joy text-center">তোমার ভালোবাসার মানুষ - জয় রায় + সেজুতি রায় </p>
+    </div>
     <script>
         const loginBtn =document.getElementById("login");
         loginBtn.addEventListener("click", function(){
             const loginArea = document.getElementById("lonin-area");
             loginArea.style.display = "none";
+            const transactionArea =  document.getElementById("transaction-area");
+            transactionArea.style.display = "block";
         })
     </script>
 </body>
